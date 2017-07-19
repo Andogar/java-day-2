@@ -17,17 +17,15 @@ public class GamePiece {
     }
 
     public int getPositionX() {
-        System.out.println("X Position: " + positionX);
         return positionX;
     }
 
+
     public int getPositionY() {
-        System.out.println("Y Position: " + positionY);
         return positionY;
     }
 
     public boolean getIsFrozen() {
-        System.out.println(isFrozen);
         return isFrozen;
     }
 
@@ -54,7 +52,8 @@ public class GamePiece {
             System.out.println("You're frozen, unfreeze to be able to move!");
         } else {
             this.positionX = randomNum.nextInt(100);
-            this.positionY = randomNum.nextInt(100);;
+            this.positionY = randomNum.nextInt(100);
+            ;
         }
     }
 

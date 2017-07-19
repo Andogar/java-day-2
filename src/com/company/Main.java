@@ -14,29 +14,36 @@ public class Main {
         mario.getColor();
         mario.getName();
 
-        // Checking that the initial status of the new piece is set to unfrozen
-        mario.getIsFrozen();
-
         // Test to make sure that it sets the game piece to frozen status while it is currently not frozen
         mario.freeze();
-        mario.getIsFrozen();
+        if (mario.getIsFrozen()) {
+            System.out.println("Freeze works properly");
+        } else {
+            System.out.println("Freeze does not work");
+        }
 
         // Test to make sure that it sets the game piece to unfrozen status while it is currently frozen
         mario.unfreeze();
-        mario.getIsFrozen();
+        if (mario.getIsFrozen()) {
+            System.out.println("Unfreeze does not work");
+        } else {
+            System.out.println("Unfreeze does work");
+        }
 
         // Test to see if you can move properly while unfrozen
-        mario.getPositionX();
-        mario.getPositionY();
-        System.out.println("Moving now.");
         mario.move();
-        mario.getPositionX();
-        mario.getPositionY();
-
+        if (mario.getPositionX() != 0 && mario.getPositionY() != 0) {
+            System.out.println("Moved successfully");
+        } else {
+            System.out.println("Did not move");
+        }
         // Test to see if, while frozen, the piece does not move
         mario.freeze();
-        System.out.println("Moving again.");
         mario.move();
-
+        if (mario.getPositionX() != 0 && mario.getPositionY() != 0) {
+            System.out.println("Moved while frozen");
+        } else {
+            System.out.println("Did not move while frozen");
+        }
     }
 }
